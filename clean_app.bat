@@ -1,0 +1,1 @@
+@powershell ./gradlew clean --info
