@@ -18,7 +18,7 @@ public class TimeRecyclerViewActivityHolder extends BaseViewFinder {
 
     protected TimeRecyclerViewActivityHolder(Activity activity) {
         super(activity);
-        recyclerView = (RecyclerView) activity.findViewById(R.id.main_activity_recyclerview);
+        recyclerView = (RecyclerView) activity.findViewById(R.id.time_activity_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
     }
 }

@@ -29,4 +29,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:25.3.1'
+//日志打印工具，方便调试
+    compile 'com.orhanobut:logger:1.4'
 }
