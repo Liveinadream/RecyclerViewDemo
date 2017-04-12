@@ -33,14 +33,6 @@ public class TimeRecyclerViewHolder extends RecyclerView.ViewHolder {
                          final TimeRecyclerViewAdapter.OnClickItemListener onClickItemListener,
                          final int position, TimeRecyclerViewActivity timeRecyclerViewActivity) {
         this.countDownTimer = countDownTimer;
-//        timeRecyclerViewHolder.itemView.setTag(position);
-        //防止过多的添加Textview
-//        if (!((textViews.size() - 1) >= position)) {
-//            textViews.put(position, position);
-//            textView.setTag(position);
-//        }
-//        textView.setText(countDownTimer.onTick(100));
-//        countDownTimer.start();
         if (timeRecyclerViewActivity.IsTimeStart.get(position)) {
             if (timeRecyclerViewActivity.IsTimeGone.get(position)) {
                 textView.setText("倒计时结束了");

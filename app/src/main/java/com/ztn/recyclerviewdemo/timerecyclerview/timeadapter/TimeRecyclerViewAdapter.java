@@ -23,7 +23,7 @@ import java.util.Set;
 
 public class TimeRecyclerViewAdapter extends SimpleRecycleViewAdapter<CountDownTimer, TimeRecyclerViewHolder> {
     private OnClickItemListener onClickItemListener;
-    private TimeRecyclerViewActivity timeRecyclerViewActivity;
+    private TimeRecyclerViewActivity timeRecyclerViewActivity;//获取Activity中的标签
 
     public TimeRecyclerViewAdapter(Context context, List<CountDownTimer> listData,
                                    TimeRecyclerViewActivity timeRecyclerViewActivity) {
@@ -56,7 +56,7 @@ public class TimeRecyclerViewAdapter extends SimpleRecycleViewAdapter<CountDownT
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         //设置标签
         holder.itemView.setTag(position);
-        holder.setIsRecyclable(false);
+//        holder.setIsRecyclable(false);
         super.onBindViewHolder(holder, position);
     }
 

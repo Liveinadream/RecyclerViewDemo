@@ -27,7 +27,7 @@ public class MainActivity extends BaseActivity {
         mainActivityHolder = new MainActivityHolder(this);
         main = new ArrayList<>();
         main.add("简单的RecyclerView");
-        main.add("点击开始的RecyclerView");
+        main.add("点击开始的计时器RecyclerView");
         for (int i = 0; i < 40; i++) {
             main.add(i + "");
         }

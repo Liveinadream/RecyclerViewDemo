@@ -57,6 +57,11 @@ public class TimeRecyclerViewActivity extends BaseActivity {
         });
     }
 
+    /**
+     * 通过viewholder的标签获得对应的viewholder
+     * @param position
+     * @return
+     */
     private TimeRecyclerViewHolder getState(int position) {
         return (TimeRecyclerViewHolder) timeRecyclerViewActivityHolder.recyclerView.
                 getChildViewHolder(timeRecyclerViewActivityHolder.recyclerView.findViewWithTag(position));
