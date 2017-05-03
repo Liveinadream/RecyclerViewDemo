@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.ztn.common.BaseActivity;
 import com.ztn.common.SceneChangeUtils;
 import com.ztn.recyclerviewdemo.adapter.MainRecyclerViewAdapter;
+import com.ztn.recyclerviewdemo.sidebarrecyclerview.SideBarRecyclerViewActivity;
 import com.ztn.recyclerviewdemo.timerecyclerview.TimeRecyclerViewActivity;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class MainActivity extends BaseActivity {
         main = new ArrayList<>();
         main.add("简单的RecyclerView");
         main.add("点击开始的计时器RecyclerView");
+        main.add("侧边栏RecyclerView");
         for (int i = 0; i < 40; i++) {
             main.add(i + "");
         }
@@ -42,6 +44,9 @@ public class MainActivity extends BaseActivity {
                 } else if (position == 1) {
                     //跳转到一个计时器界面
                     SceneChangeUtils.viewClick(getContext(), TimeRecyclerViewActivity.newIntent(getContext()));
+                } else if (position == 2) {
+                    //跳转到侧边栏界面
+                    SceneChangeUtils.viewClick(getContext(), SideBarRecyclerViewActivity.newIntent(getContext()));
                 } else {
                     Toast.makeText(getContext(), "准备中的Recyclerview", Toast.LENGTH_SHORT).show();
                 }

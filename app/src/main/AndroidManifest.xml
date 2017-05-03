@@ -27,6 +27,9 @@
         <activity
             android:name=".timerecyclerview.TimeRecyclerViewActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".sidebarrecyclerview.SideBarRecyclerViewActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
