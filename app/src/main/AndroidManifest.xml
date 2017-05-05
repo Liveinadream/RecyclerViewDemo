@@ -30,6 +30,7 @@
         <activity
             android:name=".sidebarrecyclerview.SideBarRecyclerViewActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".linkagerecyclerview.LinkageRecyclerViewActivity"/>
     </application>
 
 </manifest>
