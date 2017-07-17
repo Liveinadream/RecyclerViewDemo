@@ -30,7 +30,17 @@
         <activity
             android:name=".sidebarrecyclerview.SideBarRecyclerViewActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".linkagerecyclerview.LinkageRecyclerViewActivity"/>
+        <activity
+            android:name=".linkagerecyclerview.LinkageRecyclerViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".subsectionloadingrecyclerview.SubsectionRecyclerViewActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".recyclerviewsample.RecyclerViewSampleActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Main2Activity">
+        </activity>
     </application>
 
 </manifest>

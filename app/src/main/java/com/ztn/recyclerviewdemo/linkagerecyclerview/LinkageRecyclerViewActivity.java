@@ -84,7 +84,8 @@ public class LinkageRecyclerViewActivity extends BaseActivity {
                 (LinearLayoutManager) linkageRecyclerViewActivityHolder.week.getLayoutManager();
 
         //年份点击时所发生的事件
-        linkageYearRecyclerViewAdapter.setOnClickChooseListener(new LinkageYearRecyclerViewAdapter.OnClickChooseListener() {
+        linkageYearRecyclerViewAdapter.setOnClickChooseListener(new LinkageYearRecyclerViewAdapter.
+                OnClickChooseListener() {
             @Override
             public void onChoose(LinkageBean.Data data, int checked) {
                 forceStopRecyclerViewScroll(linkageRecyclerViewActivityHolder.week);

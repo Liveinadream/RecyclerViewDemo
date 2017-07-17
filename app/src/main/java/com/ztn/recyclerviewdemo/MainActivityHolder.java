@@ -15,7 +15,7 @@ import com.ztn.common.BaseViewFinder;
 public class MainActivityHolder extends BaseViewFinder {
     RecyclerView recyclerView;
 
-    protected MainActivityHolder(Activity activity) {
+    public MainActivityHolder(Activity activity) {
         super(activity);
         recyclerView = (RecyclerView) activity.findViewById(R.id.main_activity_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));

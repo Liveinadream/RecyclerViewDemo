@@ -38,12 +38,14 @@ public class LinkageYearRecyclerViewHolder extends RecyclerView.ViewHolder {
             checkBox.setTextColor(ContextCompat.getColor(itemView.getContext(), R.color.black));
         }
 
-        itemView.setOnClickListener(new View.OnClickListener() {
+        itemView.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (onClickChooseListener != null)
                     onClickChooseListener.onChoose(data, position);
             }
-        });
+        }
+        );
     }
 }

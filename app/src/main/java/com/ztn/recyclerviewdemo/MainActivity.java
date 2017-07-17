@@ -8,7 +8,9 @@ import com.ztn.common.BaseActivity;
 import com.ztn.common.SceneChangeUtils;
 import com.ztn.recyclerviewdemo.adapter.MainRecyclerViewAdapter;
 import com.ztn.recyclerviewdemo.linkagerecyclerview.LinkageRecyclerViewActivity;
+import com.ztn.recyclerviewdemo.recyclerviewsample.RecyclerViewSampleActivity;
 import com.ztn.recyclerviewdemo.sidebarrecyclerview.SideBarRecyclerViewActivity;
+import com.ztn.recyclerviewdemo.subsectionloadingrecyclerview.SubsectionRecyclerViewActivity;
 import com.ztn.recyclerviewdemo.timerecyclerview.TimeRecyclerViewActivity;
 
 import java.util.ArrayList;
@@ -32,7 +34,9 @@ public class MainActivity extends BaseActivity {
         main.add("点击开始的计时器RecyclerView");
         main.add("侧边栏RecyclerView");
         main.add("左右联动的Recyclerview");
-        for (int i = 0; i < 40; i++) {
+        main.add("分段加载的Recyclerview");
+        main.add("Recyclerview的简单示例");
+        for (int i = 0; i < 80; i++) {
             main.add(i + "");
         }
         mainRecyclerViewAdapter = new MainRecyclerViewAdapter(getContext(), main);
@@ -52,6 +56,12 @@ public class MainActivity extends BaseActivity {
                 } else if (position == 3) {
                     //跳转到联动界面
                     SceneChangeUtils.viewClick(getContext(), LinkageRecyclerViewActivity.newIntent(getContext()));
+                } else if (position == 4) {
+                    //跳转到分段加载界面
+                    SceneChangeUtils.viewClick(getContext(), SubsectionRecyclerViewActivity.newIntent(getContext()));
+                } else if (position == 5) {
+                    //跳转到简单示例界面
+                    SceneChangeUtils.viewClick(getContext(), RecyclerViewSampleActivity.newIntent(getContext()));
                 } else {
                     Toast.makeText(getContext(), "准备中的Recyclerview", Toast.LENGTH_SHORT).show();
                 }

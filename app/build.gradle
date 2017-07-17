@@ -18,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    return true
 }
 
 dependencies {
@@ -32,4 +33,7 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:25.3.1'
 
     testCompile 'junit:junit:4.12'
+}
+repositories {
+    mavenCentral()
 }

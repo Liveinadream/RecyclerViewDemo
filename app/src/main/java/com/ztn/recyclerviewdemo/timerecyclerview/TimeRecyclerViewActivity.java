@@ -39,7 +39,7 @@ public class TimeRecyclerViewActivity extends BaseActivity {
         countDownTimers = new ArrayList<>();
         IsTimeStart = new ArrayList<>();
         IsTimeGone = new ArrayList<>();
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < 80; i++) {
             IsTimeStart.add(false);
             IsTimeGone.add(false);
             countDownTimers.add(getCountDownTimer(i));
