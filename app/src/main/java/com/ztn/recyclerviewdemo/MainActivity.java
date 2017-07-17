@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
         main.add("侧边栏RecyclerView");
         main.add("左右联动的Recyclerview");
         main.add("分段加载的Recyclerview");
-        main.add("Recyclerview的简单示例");
+        main.add("Recyclerview的嵌套与增加删除");
         for (int i = 0; i < 80; i++) {
             main.add(i + "");
         }
