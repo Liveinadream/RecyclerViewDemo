@@ -13,7 +13,8 @@ import java.util.List;
  * Created by ztn on 2017/5/3
  */
 
-public class LinkageYearRecyclerViewAdapter extends SimpleRecycleViewAdapter<LinkageBean.Data, LinkageYearRecyclerViewHolder> {
+public class LinkageYearRecyclerViewAdapter
+        extends SimpleRecycleViewAdapter<LinkageBean.Data, LinkageYearRecyclerViewHolder> {
 
 
     private OnClickChooseListener onClickChooseListener;

@@ -1,5 +1,6 @@
 package com.ztn.recyclerviewdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
@@ -27,15 +28,21 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        String come = intent.getStringExtra("come");
+        if (come != null)
+            Toast.makeText(this, come, Toast.LENGTH_SHORT).show();
+
         setContentView(R.layout.activity_main);
         mainActivityHolder = new MainActivityHolder(this);
         main = new ArrayList<>();
         main.add("简单的RecyclerView");
         main.add("点击开始的计时器RecyclerView");
         main.add("侧边栏RecyclerView");
-        main.add("左右联动的Recyclerview");
-        main.add("分段加载的Recyclerview");
-        main.add("Recyclerview的嵌套与增加删除");
+        main.add("左右联动的RecyclerView");
+        main.add("分段加载的RecyclerView");
+        main.add("RecyclerView的嵌套与增加删除");
+        main.add("游戏RecyclerView");
         for (int i = 0; i < 80; i++) {
             main.add(i + "");
         }

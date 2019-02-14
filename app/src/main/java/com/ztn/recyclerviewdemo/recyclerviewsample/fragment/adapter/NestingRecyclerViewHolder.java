@@ -39,7 +39,8 @@ public class NestingRecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void initView(final Context context, final String string,
-                         final NestingRecyclerViewAdapter.OnClickItemListener onClickItemListener, final int position) {
+                         final NestingRecyclerViewAdapter.OnClickItemListener onClickItemListener,
+                         final int position,Nest nest) {
         textView.setText(string);
         nestingRecyclerViewChildAdapter = new NestingRecyclerViewChildAdapter(context, num);
         recyclerView.setAdapter(nestingRecyclerViewChildAdapter);

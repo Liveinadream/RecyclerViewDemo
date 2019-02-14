@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/game_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <View
+                android:id="@+id/center"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/to_left"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="25dp"
+                android:layout_toLeftOf="@+id/center"
+                android:text="向左" />
+
+            <Button
+                android:id="@+id/to_right"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@+id/center"
+                android:text="向右" />
+
+            <Button
+                android:id="@+id/start_game"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="开始" />
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/start_game"
+                android:gravity="center"
+                android:text="分数：" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/game_end"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="游戏结束！"
+        android:visibility="gone"/>
+
+</RelativeLayout>

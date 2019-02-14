@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import com.ztn.common.SimpleRecycleViewAdapter;
 import com.ztn.recyclerviewdemo.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,9 +15,11 @@ import java.util.List;
 
 public class NestingRecyclerViewAdapter extends SimpleRecycleViewAdapter<String, NestingRecyclerViewHolder> {
     private OnClickItemListener onClickItemListener;
+    private ArrayList<Nest> checkedList;
 
-    public NestingRecyclerViewAdapter(Context context, List<String> listData) {
+    public NestingRecyclerViewAdapter(Context context, List<String> listData, ArrayList<Nest> checkedList) {
         super(context, listData);
+        this.checkedList = checkedList;
     }
 
     /**
@@ -42,7 +45,7 @@ public class NestingRecyclerViewAdapter extends SimpleRecycleViewAdapter<String,
      */
     @Override
     protected void onBindItemViewHolder(NestingRecyclerViewHolder nestingRecyclerViewHolder, int position) {
-        nestingRecyclerViewHolder.initView(context, listData.get(position), onClickItemListener, position);
+        nestingRecyclerViewHolder.initView(context, listData.get(position), onClickItemListener, position,checkedList.get(position));
     }
 
     /**
