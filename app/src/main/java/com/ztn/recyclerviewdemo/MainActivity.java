@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.ztn.common.BaseActivity;
 import com.ztn.common.SceneChangeUtils;
 import com.ztn.recyclerviewdemo.adapter.MainRecyclerViewAdapter;
+import com.ztn.recyclerviewdemo.gamerecyclerview.GameRecyclerViewActivity;
 import com.ztn.recyclerviewdemo.linkagerecyclerview.LinkageRecyclerViewActivity;
 import com.ztn.recyclerviewdemo.recyclerviewsample.RecyclerViewSampleActivity;
 import com.ztn.recyclerviewdemo.sidebarrecyclerview.SideBarRecyclerViewActivity;
@@ -69,7 +70,8 @@ public class MainActivity extends BaseActivity {
                     //跳转到简单示例界面
                     SceneChangeUtils.viewClick(getContext(), RecyclerViewSampleActivity.newIntent(getContext()));
                 } else {
-                    Toast.makeText(getContext(), "准备中的Recyclerview", Toast.LENGTH_SHORT).show();
+                    //跳转到游戏界面
+                    SceneChangeUtils.viewClick(getContext(), GameRecyclerViewActivity.newIntent(getContext()));
                 }
             }
         });
