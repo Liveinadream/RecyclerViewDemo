@@ -21,9 +21,6 @@ public class MainRecyclerViewAdapter extends SimpleRecycleViewAdapter<String, Ma
 
     /**
      * 创建View
-     *
-     * @param parent
-     * @return
      */
     @Override
     protected MainRecyclerViewHolder onCreateItemViewHolder(ViewGroup parent) {
@@ -36,9 +33,6 @@ public class MainRecyclerViewAdapter extends SimpleRecycleViewAdapter<String, Ma
 
     /**
      * 给View设置数据
-     *
-     * @param mainRecyclerViewHolder
-     * @param position
      */
     @Override
     protected void onBindItemViewHolder(MainRecyclerViewHolder mainRecyclerViewHolder, int position) {
