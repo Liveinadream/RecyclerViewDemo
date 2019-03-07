@@ -20,6 +20,7 @@ import kotlin.random.Random
 
 class GameRecyclerViewActivity : BaseActivity(), GameBox {
 
+
     companion object {
         fun newIntent(context: Context): Intent {
             return Intent(context, GameRecyclerViewActivity::class.java)
@@ -35,6 +36,8 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     lateinit var gameBean: MutableList<GameBean>
     lateinit var adapter: GameRecyclerViewAdapter
     val position = ArrayList<Int>()
+    private val moren = Triple(false, second = false, third = false)
+    private var selfNum = 3
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,19 +68,39 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     override fun refreshAll(position: ArrayList<Int>) {
-        //敌人下降
-
-
+        //已有敌人下降
+        for (i in gameBean.size downTo 0) {
+            if (i < 50) {
+                gameBean[i + 7] = gameBean[i]
+                if (gameBean[i + 7].gz.second && gameBean[selfNum + 48].gz.first) {
+                    gameBean[i + 7].gz = Triple(true, second = true, third = true)
+                }
+            }
+        }
         //生成新的敌人
+        for (i in 0 until 7) {
+            gameBean[i] = GameBean(moren)
+        }
 
+        position.forEach {
+            gameBean[it] = GameBean(Triple(false, second = true, third = false))
+        }
+
+        //刷新
+        adapter.notifyDataSetChanged()
 
     }
 
     override fun toRight() {
-
+        if (selfNum < 7) {
+            selfNum++
+        }
     }
 
     override fun toLeft() {
+        if (selfNum > 0) {
+            selfNum--
+        }
 
     }
 
@@ -117,6 +140,7 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     override fun reset() {
         score.text = "分数：0"
         gameEnd.visibility = View.GONE
+        selfNum = 3
         gameState = NOGAME
 
         gameBean.clear()
@@ -126,6 +150,11 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
 
         gameBean[52].gz = Triple(first = true, second = false, third = false)
         adapter.notifyDataSetChanged()
+    }
+
+    override fun setSelf() {
+        gameBean[selfNum + 48] = GameBean(Triple(true, second = false, third = false))
+        adapter.notifyItemChanged(selfNum + 48)
 
     }
 

@@ -21,6 +21,9 @@ interface GameBox {
      * 游戏部分
      */
 
+    //设置自己的位置
+    fun setSelf()
+
     //设置敌人
     fun setEnemy()
 
