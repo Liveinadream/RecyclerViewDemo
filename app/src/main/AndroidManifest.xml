@@ -4,7 +4,6 @@
     package="com.ztn.recyclerviewdemo">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name=".BossApplication"
@@ -28,28 +27,27 @@
         </activity>
 
         <activity
-            android:name=".timerecyclerview.TimeRecyclerViewActivity"
+            android:name=".time.TimeRecyclerViewActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".sidebarrecyclerview.SideBarRecyclerViewActivity"
+            android:name=".sidebar.SideBarRecyclerViewActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".linkagerecyclerview.LinkageRecyclerViewActivity"
+            android:name=".linkage.LinkageRecyclerViewActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".subsectionloadingrecyclerview.SubsectionRecyclerViewActivity"
+            android:name=".subsection.SubsectionRecyclerViewActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".recyclerviewsample.RecyclerViewSampleActivity"
+            android:name=".sample.RecyclerViewSampleActivity"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".gamerecyclerview.GameRecyclerViewActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".game.GameRecyclerViewActivity" />
+
     </application>
 
 </manifest>

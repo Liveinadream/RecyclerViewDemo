@@ -27,14 +27,14 @@
                 android:layout_centerHorizontal="true" />
 
             <Button
-                android:id="@+id/to_left"
+                android:id="@+id/toLeft"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="25dp"
                 android:text="向左" />
 
             <Button
-                android:id="@+id/to_right"
+                android:id="@+id/toRight"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -42,7 +42,7 @@
                 android:text="向右" />
 
             <Button
-                android:id="@+id/start_game"
+                android:id="@+id/startGame"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
@@ -52,7 +52,7 @@
                 android:id="@+id/score"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/start_game"
+                android:layout_below="@+id/startGame"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:text="分数：0" />
@@ -62,7 +62,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/game_end"
+        android:id="@+id/gameEnd"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_centerInParent="true"

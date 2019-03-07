@@ -7,12 +7,12 @@ import android.widget.Toast;
 import com.ztn.common.BaseActivity;
 import com.ztn.common.SceneChangeUtils;
 import com.ztn.recyclerviewdemo.adapter.MainRecyclerViewAdapter;
-import com.ztn.recyclerviewdemo.gamerecyclerview.GameRecyclerViewActivity;
-import com.ztn.recyclerviewdemo.linkagerecyclerview.LinkageRecyclerViewActivity;
-import com.ztn.recyclerviewdemo.recyclerviewsample.RecyclerViewSampleActivity;
-import com.ztn.recyclerviewdemo.sidebarrecyclerview.SideBarRecyclerViewActivity;
-import com.ztn.recyclerviewdemo.subsectionloadingrecyclerview.SubsectionRecyclerViewActivity;
-import com.ztn.recyclerviewdemo.timerecyclerview.TimeRecyclerViewActivity;
+import com.ztn.recyclerviewdemo.game.GameRecyclerViewActivity;
+import com.ztn.recyclerviewdemo.linkage.LinkageRecyclerViewActivity;
+import com.ztn.recyclerviewdemo.sample.RecyclerViewSampleActivity;
+import com.ztn.recyclerviewdemo.sidebar.SideBarRecyclerViewActivity;
+import com.ztn.recyclerviewdemo.subsection.SubsectionRecyclerViewActivity;
+import com.ztn.recyclerviewdemo.time.TimeRecyclerViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +71,7 @@ public class MainActivity extends BaseActivity {
                     SceneChangeUtils.viewClick(getContext(), RecyclerViewSampleActivity.newIntent(getContext()));
                 } else {
                     //跳转到游戏界面
-                    SceneChangeUtils.viewClick(getContext(), GameRecyclerViewActivity.newIntent(getContext()));
+                    SceneChangeUtils.viewClick(getContext(), GameRecyclerViewActivity.Companion.newIntent(getContext()));
                 }
             }
         });
