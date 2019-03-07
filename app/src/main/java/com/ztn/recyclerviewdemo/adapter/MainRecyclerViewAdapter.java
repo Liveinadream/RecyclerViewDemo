@@ -1,7 +1,6 @@
 package com.ztn.recyclerviewdemo.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.ztn.common.SimpleRecycleViewAdapter;
@@ -43,7 +42,7 @@ public class MainRecyclerViewAdapter extends SimpleRecycleViewAdapter<String, Ma
      */
     @Override
     protected void onBindItemViewHolder(MainRecyclerViewHolder mainRecyclerViewHolder, int position) {
-        mainRecyclerViewHolder.initView(context, listData.get(position), onClickItemListener,position);
+        mainRecyclerViewHolder.initView(listData.get(position), onClickItemListener,position);
     }
 
     /**

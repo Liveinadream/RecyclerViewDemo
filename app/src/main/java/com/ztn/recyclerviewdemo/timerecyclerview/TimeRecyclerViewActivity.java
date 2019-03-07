@@ -59,7 +59,7 @@ public class TimeRecyclerViewActivity extends BaseActivity {
 
     /**
      * 通过viewholder的标签获得对应的viewholder
-     * @param position
+     * @param position 位置
      * @return
      */
     private TimeRecyclerViewHolder getState(int position) {

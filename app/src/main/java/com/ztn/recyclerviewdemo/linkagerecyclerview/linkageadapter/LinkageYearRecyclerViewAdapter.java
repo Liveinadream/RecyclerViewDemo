@@ -51,7 +51,7 @@ public class LinkageYearRecyclerViewAdapter
      */
     @Override
     protected void onBindItemViewHolder(LinkageYearRecyclerViewHolder linkageYearRecyclerViewHolder, int position) {
-        linkageYearRecyclerViewHolder.initView(context, listData.get(position), onClickChooseListener, checked, position);
+        linkageYearRecyclerViewHolder.initView(listData.get(position), onClickChooseListener, checked, position);
     }
 
     /**

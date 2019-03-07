@@ -4,18 +4,12 @@ import android.content.Context;
 import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.ztn.common.SimpleRecycleViewAdapter;
 import com.ztn.recyclerviewdemo.R;
 import com.ztn.recyclerviewdemo.timerecyclerview.TimeRecyclerViewActivity;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by ztn on 2017/3/28
@@ -33,9 +27,6 @@ public class TimeRecyclerViewAdapter extends SimpleRecycleViewAdapter<CountDownT
 
     /**
      * 创建View
-     *
-     * @param parent
-     * @return
      */
     @Override
     protected TimeRecyclerViewHolder onCreateItemViewHolder(ViewGroup parent) {

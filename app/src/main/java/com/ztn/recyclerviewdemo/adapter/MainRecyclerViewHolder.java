@@ -1,6 +1,5 @@
 package com.ztn.recyclerviewdemo.adapter;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
@@ -13,14 +12,14 @@ import com.ztn.recyclerviewdemo.R;
  */
 
 public class MainRecyclerViewHolder extends RecyclerView.ViewHolder {
-    TextView textView;
+    private TextView textView;
 
-    public MainRecyclerViewHolder(View itemView) {
+    MainRecyclerViewHolder(View itemView) {
         super(itemView);
-        textView = (TextView) itemView.findViewById(R.id.simple_tv);
+        textView = itemView.findViewById(R.id.simple_tv);
     }
 
-    public void initView(Context context, final String string, final MainRecyclerViewAdapter.OnClickItemListener onClickItemListener, final int position) {
+    public void initView(final String string, final MainRecyclerViewAdapter.OnClickItemListener onClickItemListener, final int position) {
         textView.setText(string);
 
 

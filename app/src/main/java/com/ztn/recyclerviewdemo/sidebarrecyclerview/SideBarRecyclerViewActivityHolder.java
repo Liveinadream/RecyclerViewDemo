@@ -14,14 +14,14 @@ import com.ztn.recyclerviewdemo.R;
  * @see SideBarRecyclerViewActivity
  */
 
-public class SideBarRecyclerViewActivityHolder extends BaseViewFinder {
+class SideBarRecyclerViewActivityHolder extends BaseViewFinder {
     RecyclerView recyclerView;
     TextView textView;
 
-    protected SideBarRecyclerViewActivityHolder(Activity activity) {
+    SideBarRecyclerViewActivityHolder(Activity activity) {
         super(activity);
-        recyclerView = (RecyclerView) activity.findViewById(R.id.sidebar_activity_recyclerview);
+        recyclerView = activity.findViewById(R.id.sidebar_activity_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
-        textView = (TextView) activity.findViewById(R.id.sidebar_activity_tv);
+        textView = activity.findViewById(R.id.sidebar_activity_tv);
     }
 }

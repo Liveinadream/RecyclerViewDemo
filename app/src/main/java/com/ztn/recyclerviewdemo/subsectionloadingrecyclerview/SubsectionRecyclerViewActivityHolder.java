@@ -13,13 +13,13 @@ import com.ztn.recyclerviewdemo.R;
  * @see SubsectionRecyclerViewActivity
  */
 
-public class SubsectionRecyclerViewActivityHolder extends BaseViewFinder {
+class SubsectionRecyclerViewActivityHolder extends BaseViewFinder {
 
     RecyclerView recyclerView;
 
-    public SubsectionRecyclerViewActivityHolder(Activity activity) {
+    SubsectionRecyclerViewActivityHolder(Activity activity) {
         super(activity);
-        recyclerView = (RecyclerView) activity.findViewById(R.id.main_activity_recyclerview);
+        recyclerView = activity.findViewById(R.id.main_activity_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
     }
 }

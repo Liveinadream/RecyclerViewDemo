@@ -15,18 +15,15 @@ import java.util.List;
 public class LinkageWeekAdapter extends SimpleRecycleViewAdapter<LinkageBean.Data.Weeks, LinkageWeekAdapterHolder> {
 
     private OnClickItemListener onClickItemListener;
-    int parentPosition;
+    private int parentPosition;
 
-    public LinkageWeekAdapter(Context context, List<LinkageBean.Data.Weeks> listData, int parentPosition) {
+    LinkageWeekAdapter(Context context, List<LinkageBean.Data.Weeks> listData, int parentPosition) {
         super(context, listData);
-
+        this.parentPosition = parentPosition;
     }
 
     /**
      * 创建View
-     *
-     * @param parent
-     * @return
      */
     @Override
     protected LinkageWeekAdapterHolder onCreateItemViewHolder(ViewGroup parent) {
@@ -39,13 +36,10 @@ public class LinkageWeekAdapter extends SimpleRecycleViewAdapter<LinkageBean.Dat
 
     /**
      * 给View设置数据
-     *
-     * @param homePageReprotSearchHolder
-     * @param position
      */
     @Override
     protected void onBindItemViewHolder(LinkageWeekAdapterHolder homePageReprotSearchHolder, int position) {
-        homePageReprotSearchHolder.initView(context, listData.get(position), onClickItemListener,parentPosition);
+        homePageReprotSearchHolder.initView(context, listData.get(position), onClickItemListener, parentPosition);
     }
 
     public interface OnClickItemListener {

@@ -37,7 +37,7 @@ public class LinkageRecyclerViewActivity extends BaseActivity {
     //结束的年份
     int year = 2017;
     //开始被选中的年份是第几个
-    private int hadselected = 0;
+    private int hadSelected = 0;
 
     //年份是否被点击
     private boolean isTouch;
@@ -90,8 +90,10 @@ public class LinkageRecyclerViewActivity extends BaseActivity {
             public void onChoose(LinkageBean.Data data, int checked) {
                 forceStopRecyclerViewScroll(linkageRecyclerViewActivityHolder.week);
                 isTouch = false;
-                weekLinearLayoutManager.scrollToPositionWithOffset(checked, 0);
-                hadselected = checked;
+                if (weekLinearLayoutManager != null) {
+                    weekLinearLayoutManager.scrollToPositionWithOffset(checked, 0);
+                }
+                hadSelected = checked;
                 reTypedata(checked);
             }
         });
@@ -114,21 +116,21 @@ public class LinkageRecyclerViewActivity extends BaseActivity {
                 if (isTouch) {
                     if (dy > 0) {
                         //上拉
-                        if (hadselected < weekLinearLayoutManager.findFirstVisibleItemPosition()) {
-                            hadselected++;
-                            reTypedata(hadselected);
+                        if (hadSelected < weekLinearLayoutManager.findFirstVisibleItemPosition()) {
+                            hadSelected++;
+                            reTypedata(hadSelected);
                         }
                     } else if (dy < 0) {
                         //下滑
-                        if (hadselected > weekLinearLayoutManager.findFirstVisibleItemPosition()) {
-                            hadselected--;
-                            reTypedata(hadselected);
+                        if (hadSelected > weekLinearLayoutManager.findFirstVisibleItemPosition()) {
+                            hadSelected--;
+                            reTypedata(hadSelected);
                         }
                     }
                 }
             }
         });
-        reTypedata(hadselected);
+        reTypedata(hadSelected);
     }
 
     //停止滑动
@@ -140,7 +142,7 @@ public class LinkageRecyclerViewActivity extends BaseActivity {
     private void reTypedata(int i) {
         linkageYearRecyclerViewAdapter.setChecked(i);
         linkageYearRecyclerViewAdapter.notifyDataSetChanged();
-        hadselected = i;
+        hadSelected = i;
 //        linkageRecyclerViewActivityHolder.year.smoothScrollToPosition(i);     //添加滑动事件会稍有卡顿
         yearLinearLayoutManager.scrollToPositionWithOffset(i, 0);
     }

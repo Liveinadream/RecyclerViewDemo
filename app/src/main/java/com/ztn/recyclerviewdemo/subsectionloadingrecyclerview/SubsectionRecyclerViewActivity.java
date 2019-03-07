@@ -5,19 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Toast;
 
 import com.ztn.common.BaseActivity;
-import com.ztn.common.CustomSGLayoutManager;
-import com.ztn.recyclerviewdemo.MainActivityHolder;
 import com.ztn.recyclerviewdemo.R;
 import com.ztn.recyclerviewdemo.adapter.MainRecyclerViewAdapter;
-import com.ztn.recyclerviewdemo.linkagerecyclerview.linkageadapter.LinkageYearRecyclerViewAdapter;
-import com.ztn.recyclerviewdemo.linkagerecyclerview.linkageadapter.rightadapter.RightAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

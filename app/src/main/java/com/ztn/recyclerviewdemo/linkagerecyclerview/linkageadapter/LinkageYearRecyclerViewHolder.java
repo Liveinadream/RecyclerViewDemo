@@ -1,6 +1,5 @@
 package com.ztn.recyclerviewdemo.linkagerecyclerview.linkageadapter;
 
-import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,14 +13,14 @@ import com.ztn.recyclerviewdemo.linkagerecyclerview.LinkageBean;
  */
 
 public class LinkageYearRecyclerViewHolder extends RecyclerView.ViewHolder {
-    CheckBox checkBox;
+    private CheckBox checkBox;
 
-    public LinkageYearRecyclerViewHolder(View itemView) {
+    LinkageYearRecyclerViewHolder(View itemView) {
         super(itemView);
-        checkBox = (CheckBox) itemView.findViewById(R.id.linkage_year_item_cb);
+        checkBox = itemView.findViewById(R.id.linkage_year_item_cb);
     }
 
-    public void initView(Context context, final LinkageBean.Data data,
+    public void initView(final LinkageBean.Data data,
                          final LinkageYearRecyclerViewAdapter.OnClickChooseListener onClickChooseListener, final int checked,
                          final int position) {
 

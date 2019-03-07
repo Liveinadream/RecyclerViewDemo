@@ -42,7 +42,7 @@ public class RightAdapter extends SimpleRecycleViewAdapter<LinkageBean.Data, Rig
      */
     @Override
     protected void onBindItemViewHolder(RightAdapterHolder rightAdapterHolder, int position) {
-        rightAdapterHolder.initView(context, listData.get(position), onClickItemListener,position);
+        rightAdapterHolder.initView(context, listData.get(position), position);
     }
 
     public interface OnClickItemListener {

@@ -19,20 +19,16 @@ import java.util.List;
  */
 
 public class TimeRecyclerViewHolder extends RecyclerView.ViewHolder {
-    TextView textView;
-    CountDownTimer countDownTimer;
-    TimeRecyclerViewHolder timeRecyclerViewHolder;
+    private TextView textView;
 
     public TimeRecyclerViewHolder(View itemView) {
         super(itemView);
-        textView = (TextView) itemView.findViewById(R.id.simple_tv);
-        timeRecyclerViewHolder = this;
+        textView = itemView.findViewById(R.id.simple_tv);
     }
 
     public void initView(Context context, final CountDownTimer countDownTimer,
                          final TimeRecyclerViewAdapter.OnClickItemListener onClickItemListener,
                          final int position, TimeRecyclerViewActivity timeRecyclerViewActivity) {
-        this.countDownTimer = countDownTimer;
         if (timeRecyclerViewActivity.IsTimeStart.get(position)) {
             if (timeRecyclerViewActivity.IsTimeGone.get(position)) {
                 textView.setText("倒计时结束了");

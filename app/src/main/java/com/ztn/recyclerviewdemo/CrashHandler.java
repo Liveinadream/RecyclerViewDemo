@@ -31,7 +31,7 @@ import java.util.Map;
  */
 public class CrashHandler implements UncaughtExceptionHandler {
 
-    public static final String TAG = "CrashHandler";
+    private static final String TAG = "CrashHandler";
 
     //系统默认的UncaughtException处理类
     private UncaughtExceptionHandler mDefaultHandler;

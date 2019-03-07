@@ -1,13 +1,10 @@
 package com.ztn.recyclerviewdemo.sidebarrecyclerview.sidebaradapter;
 
 import android.content.Context;
-import android.os.CountDownTimer;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.ztn.common.SimpleRecycleViewAdapter;
 import com.ztn.recyclerviewdemo.R;
-import com.ztn.recyclerviewdemo.sidebarrecyclerview.SideBarRecyclerViewActivity;
 import com.ztn.recyclerviewdemo.sidebarrecyclerview.SideBarType;
 
 import java.util.List;
@@ -26,8 +23,6 @@ public class SideBarRecyclerViewAdapter extends SimpleRecycleViewAdapter<SideBar
     /**
      * 创建View
      *
-     * @param parent
-     * @return
      */
     @Override
     protected SideBarRecyclerViewHolder onCreateItemViewHolder(ViewGroup parent) {
@@ -40,9 +35,6 @@ public class SideBarRecyclerViewAdapter extends SimpleRecycleViewAdapter<SideBar
 
     /**
      * 给View设置数据
-     *
-     * @param sideBarRecyclerViewHolder
-     * @param position
      */
     @Override
     protected void onBindItemViewHolder(SideBarRecyclerViewHolder sideBarRecyclerViewHolder, int position) {

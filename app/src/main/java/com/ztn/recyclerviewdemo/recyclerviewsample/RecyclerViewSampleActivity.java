@@ -28,7 +28,7 @@ import java.util.List;
 
 /**
  * Created by ztn on 2017/6/9
- * Recyclerview示例
+ * RecyclerView示例
  */
 
 public class RecyclerViewSampleActivity extends BaseActivity {

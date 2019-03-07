@@ -21,7 +21,7 @@ class RecyclerViewSampleActivityHolder extends BaseViewFinder {
 
     RecyclerViewSampleActivityHolder(Activity activity) {
         super(activity);
-        tabLayout = (TabLayout) activity.findViewById(R.id.viewpager_title);
-        viewPager = (ViewPager) activity.findViewById(R.id.sample_viewpager);
+        tabLayout = activity.findViewById(R.id.viewpager_title);
+        viewPager = activity.findViewById(R.id.sample_viewpager);
     }
 }
