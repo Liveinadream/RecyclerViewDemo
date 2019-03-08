@@ -152,6 +152,9 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     private fun showSelf(toLeft: Boolean) {
+        if (gameBean[selfNum + 49].gz.second) {
+            useScore++
+        }
         gameBean[selfNum + 49] = GameBean(Triple(first = true, second = false, third = false))
         if (toLeft) {
             gameBean[selfNum + 50] = GameBean(default)
@@ -170,8 +173,6 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         if (speed < 1.0) {
             speed += 0.1f
             showSpeed()
-        } else {
-            Toast.makeText(this, "速度已经是最慢了", Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -180,8 +181,6 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     override fun speedUp() {
         if (speed > 0.1f) {
             speed -= 0.1f
-        } else {
-            Toast.makeText(this, "速度已经是最快了", Toast.LENGTH_SHORT).show()
         }
     }
 
