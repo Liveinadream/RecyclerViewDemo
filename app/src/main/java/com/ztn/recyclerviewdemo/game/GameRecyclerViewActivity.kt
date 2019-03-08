@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
-import android.widget.Toast
 import com.ztn.common.BaseActivity
 import com.ztn.recyclerviewdemo.R
 import com.ztn.recyclerviewdemo.game.adppter.GameRecyclerViewAdapter
@@ -54,7 +53,7 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         game_rv.layoutManager = StaggeredGridLayoutManager(7, 1)
 
         for (i in 0 until 7 * 8) {
-            gameBean.add(GameBean(Triple(first = false, second = false, third = false)))
+            gameBean.add(GameBean(default))
         }
         adapter = GameRecyclerViewAdapter(this, gameBean)
 
@@ -215,7 +214,7 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
 
         gameBean.clear()
         for (i in 0 until 7 * 8) {
-            gameBean.add(GameBean(Triple(first = false, second = false, third = false)))
+            gameBean.add(GameBean(default))
         }
 
         gameBean[52].gz = Triple(first = true, second = false, third = false)
