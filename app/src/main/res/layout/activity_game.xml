@@ -3,21 +3,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/gameSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:text="速度：1.0"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/speedDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="25dp"
+            android:padding="5dp"
+            android:text="减速"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/speedUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:padding="5dp"
+            android:text="加速"
+            android:visibility="gone" />
+
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/game_rv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="8" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/game_rv"
+            android:layout_marginTop="100dp">
 
             <View
                 android:id="@+id/center"
@@ -26,45 +58,47 @@
                 android:layout_centerHorizontal="true" />
 
             <Button
-                android:id="@+id/to_left"
+                android:id="@+id/toLeft"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="25dp"
-                android:layout_toLeftOf="@+id/center"
+                android:layout_marginStart="25dp"
                 android:text="向左" />
 
             <Button
-                android:id="@+id/to_right"
+                android:id="@+id/toRight"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="25dp"
-                android:layout_toRightOf="@+id/center"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
                 android:text="向右" />
 
             <Button
-                android:id="@+id/start_game"
+                android:id="@+id/startGame"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
                 android:text="开始" />
 
             <TextView
                 android:id="@+id/score"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/start_game"
+                android:layout_below="@+id/startGame"
+                android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="分数：" />
+                android:text="分数：0" />
+
         </RelativeLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
-        android:id="@+id/game_end"
+        android:id="@+id/gameEnd"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:text="游戏结束！"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </RelativeLayout>

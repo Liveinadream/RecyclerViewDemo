@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ge_zi_has" android:state_checked="true" />
+    <item android:drawable="@drawable/ge_zi_not_has" android:state_checked="false" />
+</selector>
