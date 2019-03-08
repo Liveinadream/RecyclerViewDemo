@@ -8,7 +8,7 @@ import com.ztn.recyclerviewdemo.game.GameBean
 
 /**
  * Created by 冒险者ztn on 2019/3/7.
- * 介绍 todo
+ * game 的 item 样式展示
  */
 class GameRecyclerViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var imageView: ImageView = itemView.findViewById(R.id.ge_zi)
