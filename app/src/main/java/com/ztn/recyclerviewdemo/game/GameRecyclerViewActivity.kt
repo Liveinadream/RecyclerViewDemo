@@ -118,11 +118,11 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         }
         //生成新的敌人
         for (i in 0 until 7) {
-            gameBean[i] = GameBean(default)
-        }
-
-        position.forEach {
-            gameBean[it] = GameBean(Triple(false, second = true, third = false))
+            if (position.contains(i)) {
+                gameBean[i] = GameBean(Triple(false, second = true, third = false))
+            } else {
+                gameBean[i] = GameBean(default)
+            }
         }
 
         //刷新
