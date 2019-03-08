@@ -116,7 +116,7 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     private fun initTask() {
-        timer = object : CountDownTimer(36000, 1000 * speed.toLong()) {
+        timer = object : CountDownTimer(99999000, 1000 * speed.toLong()) {
             override fun onTick(millisUntilFinished: Long) {
                 if (gameState == START_GAME)
                     setEnemy()
@@ -135,10 +135,13 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         //已有敌人下降
         for (i in gameBean.size downTo 0) {
             if (i < 49) {
-                gameBean[i + 7] = gameBean[i]
-                if ((i + 7) == (selfNum + 48) && gameBean[i + 7].gz.second && gameBean[selfNum + 48].gz.first) {
+                if ((i + 7) == (selfNum + 49) && gameBean[i].gz.second && gameBean[selfNum + 49].gz.first) {
                     gameBean[i + 7].gz = Triple(true, second = true, third = true)
                     gameEnd()
+                } else if (i + 7 == selfNum + 49) {
+                    gameBean[i + 7].gz = Triple(true, second = false, third = false)
+                } else {
+                    gameBean[i + 7] = gameBean[i]
                 }
             }
         }
@@ -162,23 +165,30 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     override fun toRight() {
-        if (selfNum < 7 && gameState == START_GAME) {
+        if (selfNum < 6 && gameState == START_GAME) {
             selfNum++
-            showSelf()
+            showSelf(false)
         }
     }
 
     override fun toLeft() {
-        if (selfNum > 0 && gameState == START_GAME) {
+        if (selfNum > 1 && gameState == START_GAME) {
             selfNum--
-            showSelf()
+            showSelf(true)
         }
 
     }
 
-    private fun showSelf() {
+    private fun showSelf(toLeft: Boolean) {
         gameBean[selfNum + 48] = GameBean(Triple(first = true, second = false, third = false))
-        adapter.notifyItemChanged(selfNum + 48)
+        if (toLeft) {
+            gameBean[selfNum + 47] = GameBean(default)
+            adapter.notifyItemRangeChanged(selfNum + 47, 2)
+        } else {
+            gameBean[selfNum + 49] = GameBean(default)
+            adapter.notifyItemRangeChanged(selfNum + 48, 2)
+        }
+
     }
 
     override fun setSpeed() {
@@ -186,10 +196,10 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     override fun speedDown() {
-        if(speed<1.0){
+        if (speed < 1.0) {
             speed += 0.1f
             showSpeed()
-        }else{
+        } else {
             Toast.makeText(this, "速度已经是最慢了", Toast.LENGTH_SHORT).show()
         }
 
@@ -257,6 +267,7 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     override fun startGame() {
         reset()
         gameState = START_GAME
+        timer.cancel()
         timer.start()
 
     }
