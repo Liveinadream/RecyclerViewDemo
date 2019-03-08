@@ -146,7 +146,7 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     override fun toLeft() {
-        if (selfNum > 1 && gameState == START_GAME) {
+        if (selfNum > 0 && gameState == START_GAME) {
             selfNum--
             showSelf(true)
         }
@@ -154,15 +154,14 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     private fun showSelf(toLeft: Boolean) {
-        gameBean[selfNum + 48] = GameBean(Triple(first = true, second = false, third = false))
+        gameBean[selfNum + 49] = GameBean(Triple(first = true, second = false, third = false))
         if (toLeft) {
-            gameBean[selfNum + 47] = GameBean(default)
-            adapter.notifyItemRangeChanged(selfNum + 47, 2)
+            gameBean[selfNum + 50] = GameBean(default)
+            adapter.notifyItemRangeChanged(selfNum + 49, 2)
         } else {
-            gameBean[selfNum + 49] = GameBean(default)
+            gameBean[selfNum + 48] = GameBean(default)
             adapter.notifyItemRangeChanged(selfNum + 48, 2)
         }
-
     }
 
     override fun setSpeed() {
