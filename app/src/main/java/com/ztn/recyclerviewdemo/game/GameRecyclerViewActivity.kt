@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.support.v7.widget.StaggeredGridLayoutManager
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.ztn.common.BaseActivity
@@ -105,7 +104,6 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     override fun refreshAll(position: ArrayList<Int>) {
-        Log.d("获取到的数组：", position.toString())
         //已有敌人下降
         for (i in gameBean.size downTo 0) {
             if (i < 49) {
@@ -197,7 +195,6 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         position.clear()
         //生成的敌人个数 最多生成6个
         val enemyPosition = Random().nextInt(7)
-        Log.d("生成的敌人个数：", enemyPosition.toString())
         //在7个位置中生成对应的有敌人的位置
         for (i in 0 until enemyPosition) {
             giveNum()
