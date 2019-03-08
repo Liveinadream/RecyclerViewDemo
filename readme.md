@@ -19,3 +19,6 @@
 
 2019年3月8日11:10:30
 加入了一个游戏RecyclerView,横向可以撞敌人，所以不用担心被锁死的问题
+
+
+![Image text](https://github.com/Liveinadream/RecyclerViewDemo/blob/master/img-folder/game.png)
