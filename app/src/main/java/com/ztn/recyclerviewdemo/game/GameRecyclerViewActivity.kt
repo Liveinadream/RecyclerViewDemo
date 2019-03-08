@@ -21,6 +21,7 @@ import java.util.*
  * 一个游戏RecyclerView
  */
 
+@SuppressLint("SetTextI18n")
 class GameRecyclerViewActivity : BaseActivity(), GameBox {
 
 
@@ -129,7 +130,6 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun refreshAll(position: ArrayList<Int>) {
         Log.d("获取到的数组：", position.toString())
         //已有敌人下降
@@ -186,8 +186,15 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
     }
 
     override fun speedDown() {
-        speed += 0.1f
+        if(speed<1.0){
+            speed += 0.1f
+            showSpeed()
+        }else{
+            Toast.makeText(this, "速度已经是最慢了", Toast.LENGTH_SHORT).show()
+        }
+
     }
+
 
     override fun speedUp() {
         if (speed > 0.1f) {
@@ -196,6 +203,12 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
             Toast.makeText(this, "速度已经是最快了", Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun showSpeed() {
+        showSpeed()
+        gameSpeed.text = "速度：$speed"
+    }
+
 
     override fun setEnemy() {
         position.clear()
@@ -257,7 +270,7 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         }
     }
 
-    private fun getNum() = Random().nextInt( 7)
+    private fun getNum() = Random().nextInt(7)
 
     override fun onDestroy() {
         timer.cancel()
