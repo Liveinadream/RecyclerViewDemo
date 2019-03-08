@@ -35,32 +35,6 @@ class GameRecyclerViewActivity : BaseActivity(), GameBox {
         const val END_GAME = 3           //当前游戏已经结束
     }
 
-//    private val mHandler = object : Handler() {
-//       override fun handleMessage(msg: Message) {
-//            super.handleMessage(msg)
-//            when (msg.what) {
-//                START_GAME ->{
-//                    //在这里去执行定时操作逻辑
-//                    val message =obtainMessage(START_GAME)
-//                    this.sendMessageDelayed(message, 1000)
-//                }
-//
-//                else -> {
-//                }
-//            }
-//        }
-//    }
-//
-//    class MyHandler :Handler(){
-//
-//
-//        override fun handleMessage(msg: Message?) {
-//            super.handleMessage(msg)
-//
-//
-//        }
-//    }
-
     private var gameState = NO_GAME
     private var speed = 1f
     private var useScore = 0
