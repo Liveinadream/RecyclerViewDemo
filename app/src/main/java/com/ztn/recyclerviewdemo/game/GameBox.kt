@@ -39,4 +39,8 @@ interface GameBox {
     //重置
     fun reset()
 
+    fun gameEnd()
+
+    fun startGame()
+
 }
